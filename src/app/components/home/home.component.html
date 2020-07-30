@@ -1,0 +1,43 @@
+<ns-action-bar
+        title="Products"
+        android-icon="font://&#xf0c9;"
+        ios-icon="&#xf0c9;"
+        [to-navigate]="toNavigate">
+</ns-action-bar>
+
+<GridLayout rows="*">
+
+    <RadListView [items]="products" pullToRefresh="true" (pullToRefreshInitiated)="onPullToRefreshInitiated($event)"
+                 loadOnDemandMode="Manual" (loadMoreDataRequested)="onLoadMoreItemsRequested($event)">
+        <ListViewGridLayout tkListViewLayout scrollDirection="Vertical"></ListViewGridLayout>
+
+        <ng-template tkListItemTemplate let-item="item">
+            <StackLayout class="product">
+                <Image [src]="item.mainPhotoUrl" decodeWidth="400" decodeHeight="400" loadMode="async"></Image>
+                <Label [text]="item.name" class="name">
+                </Label>
+
+                <Label [text]="'Rs ' + item.price" class="price">
+                </Label>
+
+                <Button text="View" (tap)="view(item)" class="view-btn"></Button>
+            </StackLayout>
+        </ng-template>
+
+        <ng-template tkListViewHeader>
+            <ScrollView orientation="horizontal" scrollBarIndicatorVisible="false">
+                <StackLayout orientation="horizontal">
+                    <GridLayout class="tile">
+                        <Label text="FRUITS" horizontalAlignment="center" verticalAlignment="center" class="mt fs14 ls"></Label>
+                    </GridLayout>
+                    <GridLayout class="tile">
+                        <Label text="SALADS" horizontalAlignment="center" verticalAlignment="center" class="mt fs14 ls"></Label>
+                    </GridLayout>
+                    <GridLayout class="tile">
+                        <Label text="MIXTURES" horizontalAlignment="center" verticalAlignment="center" class="mt fs14 ls"></Label>
+                    </GridLayout>
+                </StackLayout>
+            </ScrollView>
+        </ng-template>
+    </RadListView>
+</GridLayout>

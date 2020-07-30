@@ -1,0 +1,37 @@
+
+<GridLayout rows="100, auto" verticalAlignment="center">
+    <StackLayout row="0">
+        <Image
+                src="https://play.nativescript.org/dist/assets/img/NativeScript_logo.png"
+        ></Image>
+    </StackLayout>
+    <StackLayout class="w-full" height="auto" row="1">
+        <TextField class="input login-input m-b-5" keyboardType="email"
+                   hint="Username" autocorrect="false"
+                   autocapitalizationType="none" returnKeyType="go">
+        </TextField>
+
+        <TextField class="input login-input m-b-10" hint="Password" secure="true" >
+        </TextField>
+
+        <Button
+                text="Login"
+                class="starter-button"
+                (tap)="login()"></Button>
+
+        <Label class="text-center">
+            <FormattedString>
+                <Span text="Forgot password? "></Span>
+                <Span text="Click here!"></Span>
+            </FormattedString>
+        </Label>
+    </StackLayout>
+</GridLayout>
+
+<ActivityIndicator
+        [busy]="isBusy"
+        [visibility]="isBusy ? 'visible' : 'collapse'"
+        class="activity-indicator"
+        color="#f45c35"
+        width="50"
+        height="50"></ActivityIndicator>

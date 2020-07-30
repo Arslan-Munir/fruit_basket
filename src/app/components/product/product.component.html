@@ -1,0 +1,33 @@
+<ns-action-bar
+        title="{{title}}"
+        android-icon="font://&#xf060;"
+        ios-icon="&#xf060;"
+        [to-navigate]="toNavigate">
+</ns-action-bar>
+
+<ScrollView scrollBarIndicatorVisible="false">
+
+    <FlexboxLayout flexDirection="column">
+        <FlexboxLayout flexDirection="column">
+            <Image class="main-photo" src="{{toDisplayPhoto}}"></Image>
+            <GridLayout rows="auto" columns="*,*,*,*,*">
+                <Image class="photo" col="0" src="{{product.mainPhotoUrl}}" (tap)="changePhoto(product.mainPhotoUrl)"></Image>
+                <Image class="photo" col="1" src="{{product.photos[0]}}" (tap)="changePhoto(product.photos[0])"></Image>
+                <Image class="photo" col="2" src="{{product.photos[1]}}" (tap)="changePhoto(product.photos[1])"></Image>
+                <Image class="photo" col="3" src="{{product.photos[2]}}" (tap)="changePhoto(product.photos[2])"></Image>
+                <Image class="photo" col="4" src="{{product.photos[3]}}" (tap)="changePhoto(product.photos[3])"></Image>
+            </GridLayout>
+        </FlexboxLayout>
+
+        <FlexboxLayout flexDirection="column">
+            <Button class="cart-btn" text="Add to cart" (tap)="addToCart()"></Button>
+        </FlexboxLayout>
+
+        <GridLayout rows="auto,auto,auto" columns="*">
+            <Label text="Name" [text]="product.name" col="0" row="0" class="name"></Label>
+            <Label text="Price" text="Rs {{product.price}}" col="1" row="1" class="price"></Label>
+            <Label text="Description" [text]="product.description" textWrap="true" col="2" row="2" class="description"></Label>
+        </GridLayout>
+
+    </FlexboxLayout>
+</ScrollView>

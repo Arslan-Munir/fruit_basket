@@ -1,0 +1,21 @@
+
+<RadSideDrawer tkExampleTitle tkToggleNavButton drawerLocation="left">
+    <GridLayout tkDrawerContent rows="*" class="sideStackLayout">
+        <StackLayout class="sideStackLayout">
+            <Label
+                    text="Address book"
+                    class="sideLabel sideLightGrayLabel"
+                    [nsRouterLink]= "['address-book']"
+                    (tap)="closeDrawer()"></Label>
+            <Label text="Social" class="sideLabel"></Label>
+            <Label text="Promotions" class="sideLabel"></Label>
+            <Label text="Labels" class="sideLabel sideLightGrayLabel" (tap)="closeDrawer()"></Label>
+            <Label text="Important" class="sideLabel"></Label>
+            <Label text="Starred" class="sideLabel"></Label>
+            <Label text="Sent Mail" class="sideLabel"></Label>
+            <Label text="Drafts" class="sideLabel"></Label>
+        </StackLayout>
+    </GridLayout>
+
+    <page-router-outlet tkMainContent></page-router-outlet>
+</RadSideDrawer>

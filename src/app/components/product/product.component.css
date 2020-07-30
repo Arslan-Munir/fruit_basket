@@ -1,0 +1,37 @@
+/* Add mobile styles for the component here.  */
+
+.main-photo{
+    margin: 5;
+}
+
+.photo{
+    margin: 2;
+}
+
+.name{
+    font-size: 17;
+    font-weight: 700;
+    color: black;
+    margin: 10;
+}
+
+.price{
+    font-size: 15;
+    font-weight: 400;
+    margin-left: 10;
+    margin-bottom: 10;
+    color: #494840;
+}
+
+.description{
+    margin-left: 10;
+}
+
+.cart-btn{
+    background-color:  #e94444;
+    border-radius: 5;
+    font-weight: 500;
+    font-size: 16;
+    width: 100%;
+    color: whitesmoke;
+}

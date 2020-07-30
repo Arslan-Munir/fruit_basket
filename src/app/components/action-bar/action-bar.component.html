@@ -1,0 +1,17 @@
+<ActionBar title="{{title}}" class="action-bar">
+    <NavigationButton
+            *ifAndroid
+            icon="{{androidIcon}}"
+            class="fas android-icon"
+            (tap)="performAction()">
+    </NavigationButton>
+
+    <ActionItem
+            *ifIos
+            ios.position="left">
+        <Label
+                text="{{iosIcon}}"
+                class="fas icon"
+                (tap)="performAction()"></Label>
+    </ActionItem>
+</ActionBar>

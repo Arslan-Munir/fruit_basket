@@ -5,23 +5,35 @@
         [to-navigate]="toNavigate">
 </ns-action-bar>
 
-<GridLayout rows="*">
-
-    <RadListView [items]="products" pullToRefresh="true" (pullToRefreshInitiated)="onPullToRefreshInitiated($event)"
+ <RadListView height="100%" [items]="products" pullToRefresh="true" (pullToRefreshInitiated)="onPullToRefreshInitiated($event)"
                  loadOnDemandMode="Manual" (loadMoreDataRequested)="onLoadMoreItemsRequested($event)">
-        <ListViewGridLayout tkListViewLayout scrollDirection="Vertical"></ListViewGridLayout>
+        <ListViewGridLayout tkListViewLayout scrollDirection="Vertical" itemHeight="265" spanCount="2"></ListViewGridLayout>
 
         <ng-template tkListItemTemplate let-item="item">
-            <StackLayout class="product">
-                <Image [src]="item.mainPhotoUrl" decodeWidth="400" decodeHeight="400" loadMode="async"></Image>
-                <Label [text]="item.name" class="name">
-                </Label>
+<!--            <StackLayout class="product">-->
+<!--                <Image [src]="item.mainPhotoUrl" loadMode="async"></Image>-->
+<!--                <Label [text]="item.name" class="name">-->
+<!--                </Label>-->
 
-                <Label [text]="'Rs ' + item.price" class="price">
-                </Label>
+<!--                <Label [text]="'Rs ' + item.price" class="price">-->
+<!--                </Label>-->
 
-                <Button text="View" (tap)="view(item)" class="view-btn"></Button>
-            </StackLayout>
+<!--                <StackLayout>-->
+<!--                    <Button text="View" (tap)="view(item)" class="view-btn"></Button>-->
+<!--                </StackLayout>-->
+<!--            </StackLayout>-->
+
+            <GridLayout class="product" rows="auto,auto,auto, auto" columns="*">
+                <Image [src]="item.mainPhotoUrl" loadMode="async" row="0" col="0"></Image>
+
+                <Label [text]="item.name" class="name" row="1" col="0"></Label>
+
+                <Label [text]="'Rs ' + item.price" class="price" row="2" col="0"></Label>
+
+                <StackLayout  row="3" col="0">
+                    <Button text="View" (tap)="view(item)" class="view-btn"></Button>
+                </StackLayout>
+            </GridLayout>
         </ng-template>
 
         <ng-template tkListViewHeader>
@@ -40,4 +52,4 @@
             </ScrollView>
         </ng-template>
     </RadListView>
-</GridLayout>
+

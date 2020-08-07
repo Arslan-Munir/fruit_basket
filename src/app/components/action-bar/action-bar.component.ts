@@ -12,7 +12,7 @@ export class ActionBarComponent implements OnInit {
 
     @Input('title') title: string;
     @Input('android-icon') androidIcon: string;
-    @Input('ios-icon') iosIcon: string;
+    @Input('ios-icon') iosIcon = "";
     @Input('to-navigate') toNavigate: NavigationOptions;
 
     constructor(private drawerService: DrawerService, private routerExtensions: RouterExtensions) {

@@ -1,9 +1,14 @@
 <ActionBar title="{{title}}" class="action-bar">
     <NavigationButton
-            *ifAndroid
             icon="{{androidIcon}}"
+            *ifAndroid
             class="fas android-icon"
             (tap)="performAction()">
+    </NavigationButton>
+
+    <NavigationButton
+            *ifIos
+            visibility="collapsed">
     </NavigationButton>
 
     <ActionItem

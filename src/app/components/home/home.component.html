@@ -10,18 +10,6 @@
         <ListViewGridLayout tkListViewLayout scrollDirection="Vertical" itemHeight="265" spanCount="2"></ListViewGridLayout>
 
         <ng-template tkListItemTemplate let-item="item">
-<!--            <StackLayout class="product">-->
-<!--                <Image [src]="item.mainPhotoUrl" loadMode="async"></Image>-->
-<!--                <Label [text]="item.name" class="name">-->
-<!--                </Label>-->
-
-<!--                <Label [text]="'Rs ' + item.price" class="price">-->
-<!--                </Label>-->
-
-<!--                <StackLayout>-->
-<!--                    <Button text="View" (tap)="view(item)" class="view-btn"></Button>-->
-<!--                </StackLayout>-->
-<!--            </StackLayout>-->
 
             <GridLayout class="product" rows="auto,auto,auto, auto" columns="*">
                 <Image [src]="item.mainPhotoUrl" loadMode="async" row="0" col="0"></Image>

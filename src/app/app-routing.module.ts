@@ -8,8 +8,8 @@ import {ProductComponent} from "~/app/components/product/product.component";
 import {AddToCartComponent} from "~/app/components/add-to-cart/add-to-cart.component";
 
 const routes: Routes = [
-    // { path: "", component: LoginComponent },
-    { path: "", component: HomeComponent },
+    { path: "", component: LoginComponent },
+    // { path: "", component: HomeComponent },
     { path: "home", component: HomeComponent },
     { path: "product/:id", component: ProductComponent },
     { path: "add-to-cart", component: AddToCartComponent },

@@ -3,17 +3,24 @@
     <GridLayout tkDrawerContent rows="*" class="sideStackLayout">
         <StackLayout class="sideStackLayout">
             <Label
+                    text="Home"
+                    class="sideLabel"
+                    [nsRouterLink]= "['/']"
+                    (tap)="closeDrawer()"></Label>
+
+            <Label
                     text="Address book"
                     class="sideLabel sideLightGrayLabel"
                     [nsRouterLink]= "['address-book']"
                     (tap)="closeDrawer()"></Label>
-            <Label text="Social" class="sideLabel"></Label>
-            <Label text="Promotions" class="sideLabel"></Label>
-            <Label text="Labels" class="sideLabel sideLightGrayLabel" (tap)="closeDrawer()"></Label>
-            <Label text="Important" class="sideLabel"></Label>
-            <Label text="Starred" class="sideLabel"></Label>
-            <Label text="Sent Mail" class="sideLabel"></Label>
-            <Label text="Drafts" class="sideLabel"></Label>
+
+            <Label
+                    text="Login"
+                    class="sideLabel"
+                    [nsRouterLink]= "['login']"
+                    (tap)="closeDrawer()"></Label>
+
+            <Label text="Share us " class="sideLabel sideLightGrayLabel" (tap)="closeDrawer()"></Label>
         </StackLayout>
     </GridLayout>
 

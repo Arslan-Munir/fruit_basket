@@ -5,13 +5,14 @@
         [to-navigate]="toNavigate">
 </ns-action-bar>
 
+
  <RadListView height="100%" [items]="products" pullToRefresh="true" (pullToRefreshInitiated)="onPullToRefreshInitiated($event)"
                  loadOnDemandMode="Manual" (loadMoreDataRequested)="onLoadMoreItemsRequested($event)">
         <ListViewGridLayout tkListViewLayout scrollDirection="Vertical" itemHeight="265" spanCount="2"></ListViewGridLayout>
 
         <ng-template tkListItemTemplate let-item="item">
 
-            <GridLayout class="product" rows="auto,auto,auto, auto" columns="*">
+            <GridLayout class="product" rows="auto,auto,auto, auto" columns="*" (tap)="view(item)">
                 <Image [src]="item.mainPhotoUrl" loadMode="async" row="0" col="0"></Image>
 
                 <Label [text]="item.name" class="name" row="1" col="0"></Label>

@@ -8,13 +8,12 @@ import {ProductComponent} from "~/app/components/product/product.component";
 import {AddToCartComponent} from "~/app/components/add-to-cart/add-to-cart.component";
 
 const routes: Routes = [
-    { path: "", component: LoginComponent },
-    // { path: "", component: HomeComponent },
+    { path: "", component: HomeComponent },
     { path: "home", component: HomeComponent },
     { path: "product/:id", component: ProductComponent },
     { path: "add-to-cart", component: AddToCartComponent },
-    { path: "address-book", component: AddressBookComponent }
-    // { path: "home", loadChildren: () => import("~/app/home/home.module").then((m) => m.HomeModule) }
+    { path: "address-book", component: AddressBookComponent },
+    { path: "login", component: LoginComponent }
 ];
 
 @NgModule({
